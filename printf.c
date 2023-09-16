@@ -32,13 +32,6 @@ int _printf(const char *format, ...)
 				case 'd':
 				case 'i': {
 						  num = va_arg(args, int);
-						  if (num < 0)
-						  {
-						  _putchar('-');
-						  count++;
-						  num = -num;
-						  }
-						  
 						  count += print_int(num);
 						  break;
 					  }

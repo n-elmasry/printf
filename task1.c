@@ -9,7 +9,7 @@
 
 int _printf(const char *format, ...)
 {
-int i, num, count = 0;
+int i = 0, num, count = 0;
 char num_array[20];
 va_list args;
 va_start(args, format);
@@ -27,10 +27,11 @@ case 'i':
 num = va_arg(args, int);
 
 sprintf(num_array, "%d", num);
-for (i = 0; num_array[i]; i++)
+while (num_array[i])
 {
 putchar(num_array[i]);
 count++;
+i++;
 }
 break;
 }

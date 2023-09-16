@@ -30,15 +30,6 @@ int _printf(const char *format, ...)
 					break;
 
 				case 'd':
-<<<<<<< HEAD
-				case 'i':
-					num = va_arg(args, int);
-					if (num < 0)
-					{
-						putchar('-');
-						count++;
-						num = -num;
-=======
 				case 'i': {
 						  num = va_arg(args, int);
 						  if (num < 0)
@@ -51,14 +42,6 @@ int _printf(const char *format, ...)
 						  count += print_int(num);
 						  break;
 					  }
-				default: {
-						return (-1);
->>>>>>> origin/master
-					}
-					numbers = print_int(num);
-					count += numbers;
-					break;
-
 				default:
 					_putchar('%');
 					_putchar(format[i]);

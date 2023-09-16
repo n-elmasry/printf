@@ -20,7 +20,7 @@ int _printf(const char *format, ...)
 	{
 		if (format[i] == '%' && format[i + 1] == 'c')
 		{
-		       	char d = va_arg(args, int);
+			char d = va_arg(args, int);
 			_putchar(d);
 			count++;
 			i++;
@@ -30,7 +30,7 @@ int _printf(const char *format, ...)
 			s = va_arg(args, char*);
 
 			n = 0;
-			
+
 			while (s[n] != '\0')
 			{
 				_putchar(s[n]);

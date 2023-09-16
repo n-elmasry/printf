@@ -17,42 +17,41 @@ int _printf(const char *format, ...)
 	{
 		if (format[i] == '%')
 		{
+			i++;
 			switch (format[i + 1])
 			{
-				case 'c': {
-						  _putchar(va_arg(args, int));
-						  count++;
-						break;
-					}
-				case 's': {
-						  count += print_string(va_arg(args, char*));
-						break;
-					}
+				case 'c':
+					_putchar(va_arg(args, int));
+					count++;
+					break;
+
+				case 's':
+					count += print_string(va_arg(args, char*));
+					break;
+
 				case 'd':
-				case 'i': {
-						  num = va_arg(args, int);
-						  if (num < 0)
-						  {
-						  putchar('-');
-						  count++;
-						  num = -num;
-						  }
-						  numbers = print_int(num);
-						  count += numbers;
-						  break;
-					  }
-				default: {
-						return (-1);
+				case 'i':
+					num = va_arg(args, int);
+					if (num < 0)
+					{
+						putchar('-');
+						count++;
+						num = -num;
 					}
+					numbers = print_int(num);
+					count += numbers;
+					break;
+
+				default:
+					_putchar('%');
+					_putchar(format[i]);
 			}
-			i++;
 		}
-		else
-		{
-			_putchar(format[i]);
-			count++;
-		}
+		i++;
 	}
+	_putchar(format[i]);
+	count++;
+
 	va_end(args);
 	return (count);
 }

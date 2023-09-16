@@ -2,7 +2,7 @@
 
 /**
  * _printf - a fucntion prints integer and characters
- * @fornmat: inputted format specfier
+ * @format: inputted format specfier
  * Return: -1 for failure and count for success
 */
 int _printf(const char *format, ...)
@@ -21,6 +21,7 @@ int _printf(const char *format, ...)
 		if (format[i] == '%' && format[i + 1] == 'c')
 		{
 			char d = va_arg(args, int);
+
 			_putchar(d);
 			count++;
 			i++;

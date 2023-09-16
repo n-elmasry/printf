@@ -8,13 +8,10 @@ int print_string(char *str)
 {
 	int n = 0, count = 0;
 
-	if (str == NULL)
-		str = NULL;
-
 	while (str[n] != '\0')
 	{
 		_putchar(str[n]);
-		str++;
+		n++;
 		count++;
 	}
 	return (count);

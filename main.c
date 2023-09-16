@@ -12,6 +12,6 @@ int main(void)
 	_printf("Character:[%c]\n", 'H');
 	_printf("String:[%s]\n", "I am a string !");
 	_printf("my name is %s\n", name);
-	_printf("my first char of my name is %c\n", fchar);
+	_printf("my first char of my name is %   c\n", fchar);
 	return (0);
 }

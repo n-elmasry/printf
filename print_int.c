@@ -1,4 +1,3 @@
-#include <stdio.h>
 #include "main.h"
 /**
 *print_int - prints integrs
@@ -8,29 +7,32 @@
 
 int print_int(int num)
 {
-int number = 0, rev =0, digit;
+int i = 0, j, number = 0;
+int num_array[10];
 
 if (num == 0)
 {
-_putchar('0');
+putchar('0');
 return 1;
 }
 if (num < 0)
 {
+putchar('-');
 num = -num;
+number++;
 }
+
 while (num > 0)
 {
-digit = num % 10;
-rev = rev * 10 + digit;
+num_array[i] = num % 10;
 num /= 10;
+i++;
 }
-while (rev > 0)
+
+for (j = i - 1; j >= 0; j--)
 {
-int digit = rev % 10;
-_putchar('0' + digit);
+putchar('0' + num_array[j]);
 number++;
-rev /= 10;
 }
 return (number);
 }

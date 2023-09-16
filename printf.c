@@ -32,8 +32,8 @@ int _printf(const char *format, ...)
 					count += print_int(num);
 					break;
 				default:
-					_putchar('%');
-					_putchar(format[i]);
+					_printf("%%");
+					_printf("%c", format[i]);
 					count += 2;
 			}
 		}

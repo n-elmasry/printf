@@ -8,11 +8,11 @@
 
 int print_int(int num)
 {
-int number = 0, rev, digit;
+int number = 0, rev =0, digit;
 
 if (num == 0)
 {
-putchar('0');
+_putchar('0');
 return 1;
 }
 if (num < 0)
@@ -25,9 +25,10 @@ digit = num % 10;
 rev = rev * 10 + digit;
 num /= 10;
 }
-while (rev > 0) {
+while (rev > 0)
+{
 int digit = rev % 10;
-putchar('0' + digit);
+_putchar('0' + digit);
 number++;
 rev /= 10;
 }

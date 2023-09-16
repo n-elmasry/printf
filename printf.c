@@ -7,7 +7,7 @@
 int _printf(const char *format, ...)
 {
 	va_list args;
-	int i, num, numbers, count = 0;
+	int i, num, count = 0;
 
 	va_start(args, format);
 	if (format == NULL)
@@ -33,12 +33,12 @@ int _printf(const char *format, ...)
 						  num = va_arg(args, int);
 						  if (num < 0)
 						  {
-						  putchar('-');
+						  _putchar('-');
 						  count++;
 						  num = -num;
 						  }
-						  numbers = print_int(num);
-						  count += numbers;
+						  
+						  count += print_int(num);
 						  break;
 					  }
 				default: {

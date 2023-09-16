@@ -10,6 +10,5 @@
 
 int _printf(const char *format, ...);
 int _putchar(char c);
-char **_extractdata(const char *format, ...);
 
 #endif

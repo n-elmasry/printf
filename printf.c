@@ -12,7 +12,6 @@ int _printf(const char *format, ...)
 	va_start(args, format);
 	if (format == NULL)
 		return (-1);
-
 	for (i = 0; format[i] != '\0'; i++)
 	{
 		if (format[i] == '%')
@@ -24,18 +23,14 @@ int _printf(const char *format, ...)
 					_putchar(va_arg(args, int));
 					count++;
 					break;
-
 				case 's':
 					count += print_string(va_arg(args, char*));
 					break;
-
 				case 'd':
-				case 'i'
-					: {
-						  num = va_arg(args, int);
-						  count += print_int(num);
-						  break;
-					  }
+				case 'i':
+					num = va_arg(args, int);
+					count += print_int(num);
+					break;
 				default:
 					_putchar('%');
 					_putchar(format[i]);

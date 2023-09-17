@@ -1,49 +1,20 @@
-#include <unistd.h>
 #include "main.h"
+#include <unistd.h>
+#include <stdio.h>   
+
 /**
- * print_int - prints integers
- * @n: the integer to be printed
- * Return: the number of characters printed
+ * print_int - print inteegrs
+ * @n: The integer to print
  */
 
-int print_int(int n)
+int print_int(int num)
 {
-char num_array[12];
-int count = 0, i, j;
-int negativ_num = 0;
-
-if (n == -2147483648)
-{
-write(1, "-", 1);
-write(1, "2147483648", 10);
-return (11);
+    int i,  numbers;
+    char num_array[32];
+    numbers = snprintf(num_array, sizeof(num_array), "%d", num);
+    for (i = 0; i < numbers; i++)
+    {
+        putchar(num_array[i]);
+    }
+    return (numbers);
 }
-if (n < 0)
-{
-negativ_num = 1;
-n = -n;
-count++;
-}
-
-i = 0;
-while (n > 0)
-{
-num_array[i++] = (n % 10) + '0';
-n /= 10;
-}
-
-if (negativ_num)
-{
-write(1, "-", 1);
-count++;
-}
-
-for (j = i - 1; j >= 0; j--)
-{
-write(1, &num_array[j], 1);
-count++;
-}
-
-return (count);
-}
-

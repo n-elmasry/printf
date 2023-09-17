@@ -42,19 +42,6 @@ for (j = i - 1; j >= 0; j--)
 {
 write(1, &num_array[j], 1);
 count++;
-int print_int(int num)
-{
-int count = 0;
-
-if (num < 10)
-{
-putchar(num + '0');
-return count;
-}
-print_int(num / 10);
-putchar((num % 10) + '0');
-count++;
-return (count);
 }
 
 return (count);

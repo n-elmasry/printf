@@ -7,7 +7,7 @@
 int _printf(const char *format, ...)
 {
 	va_list args;
-	int i, num, count = 0;
+	int i, count = 0;
 
 	va_start(args, format);
 	if (format == NULL)
@@ -24,6 +24,10 @@ int _printf(const char *format, ...)
 					break;
 				case 's':
 					count += print_string(va_arg(args, char*));
+					break;
+				case 'i':
+				case 'd':
+					count += print_int(va_arg(args, int));
 					break;
 				default:
 					_putchar(format[i]);

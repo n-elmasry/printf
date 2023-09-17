@@ -1,20 +1,28 @@
+#include <stdio.h>
 #include "main.h"
-#include <unistd.h>
-#include <stdio.h>   
-
 /**
- * print_int - print inteegrs
- * @n: The integer to print
- */
-
+*print_int - prints integrs
+*@num: num
+*Return: number
+*/
 int print_int(int num)
 {
-    int i,  numbers;
-    char num_array[32];
-    numbers = snprintf(num_array, sizeof(num_array), "%d", num);
-    for (i = 0; i < numbers; i++)
-    {
-        putchar(num_array[i]);
-    }
-    return (numbers);
+int i = 0, j;
+char num_array[12];
+int number = num;
+if (num < 0)
+{
+_putchar('-');
+num = -num;
+}
+while (num > 0)
+{
+num_array[i++] =  num % 10 + '0';
+num /= 10;
+}
+for (j= i - 1; j >= 0; j--)
+{
+_putchar(num_array[j]);
+}
+return (number);
 }

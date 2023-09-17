@@ -6,7 +6,7 @@
 *Return: number
 */
 
-int print_in(int num)
+int print_int(int num)
 {
 char num_array[12];
 int i = 0, numbers;

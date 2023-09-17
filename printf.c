@@ -21,24 +21,31 @@ int _printf(const char *format, ...)
 			}
 			switch (format[i + 1])
 			{
-				case 'c':
+				case 'c':{
 				count += putchar(va_arg(args, int));
 				i++;
 				break;
-				case 's':
+					}
+				case 's':{
 				count += print_string(va_arg(args, char*));
 				i++;
 				break;
-				case '%':
+					}
+				case '%':{
 				count += putchar('%');
 				break;
-				case 'i':
-				case 'd':
+					 }
+				case 'i':{
+				 break;
+					 }
+				case 'd':{
 				count += print_int(va_arg(args, int));
 				break;
-				default:
+					 }
+				default:{
 				count += putchar('%');
 				break;
+					}
 			}}
 		else
 		{

@@ -18,11 +18,11 @@ negative_num = 1;
 num = -num;
 }
 
-do
-{
+do {
 num_array[i++] = '0' + (num % 10);
 num /= 10;
 }
+
 while (num);
 
 if (negative_num)

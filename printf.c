@@ -16,7 +16,6 @@ int _printf(const char *format, ...)
 	{
 		if (format[i] == '%')
 		{
-			i++;
 			switch (format[i])
 			{
 				case 'c':
@@ -32,8 +31,7 @@ int _printf(const char *format, ...)
 					count += print_int(num);
 					break;
 				default:
-					if (*format == '%' && *(format + 1) == '%')
-						putchar('%');
+					if (format[i] == '%' && format[i + 1] == '%')
 					_putchar(format[i]);
 					count += 2;
 			}

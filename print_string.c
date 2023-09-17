@@ -9,7 +9,7 @@ int print_string(char *str)
 	int n = 0, count = 0;
 
 	if (str == NULL)
-		str = "NULL";
+		str = "(null)";
 
 	while (str[n] != '\0')
 	{

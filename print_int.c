@@ -6,6 +6,7 @@
  * Return: the number of characters printed
  */
 
+<<<<<<< HEAD
 int print_int(int n)
 {
 char num_array[12];
@@ -42,6 +43,21 @@ for (j = i - 1; j >= 0; j--)
 {
 write(1, &num_array[j], 1);
 count++;
+=======
+int print_int(int num)
+{
+int count = 0;
+
+if (num < 10)
+{
+putchar(num + '0');
+return count;
+}
+print_int(num / 10);
+putchar((num % 10) + '0');
+count++;
+return (count);
+>>>>>>> b823c96a64aac90e511c3dd8709e083fbe38d170
 }
 
 return (count);

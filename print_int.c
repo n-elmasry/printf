@@ -1,40 +1,19 @@
+#include <stdlib.h>
 #include "main.h"
 
 /**
-*print_int - prints integrs
-*@num: num
-*Return: number
-*/
+ * print_int - prints integers
+ * @num: the integer to be printed
+ * Return: the number of characters printed
+ */
 
-int print_int(int num)
+void print_int(int num)
 {
-char num_array[12];
-int i = 0, numbers;
-int negative_num = 0;
-
-if (num < 0)
+if (num < 10)
 {
-negative_num = 1;
-num = -num;
+putchar(num + '0');
+return;
 }
-
-do
-{
-num_array[i++] = '0' + (num % 10);
-num /= 10;
-}
-while (num);
-
-if (negative_num)
-{
-num_array[i++] = '-';
-}
-numbers = 0;
-
-while (i > 0)
-{
-putchar(num_array[--i]);
-numbers++;
-}
-return (numbers);
+print_int(num / 10);
+putchar((num % 10) + '0');
 }

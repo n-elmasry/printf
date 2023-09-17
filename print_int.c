@@ -8,7 +8,7 @@
 
 int print_int(int num)
 {
-char num_array[12];
+char num_array[20];
 int i = 0, numbers;
 int negative_num = 0;
 
@@ -29,6 +29,7 @@ if (negative_num)
 {
 num_array[i++] = '-';
 }
+num_array = '\0';
 numbers = 0;
 
 while (i > 0)

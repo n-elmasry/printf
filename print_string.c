@@ -17,6 +17,6 @@ int print_string(char *str)
 		n++;
 		count++;
 	}
-	
+
 	return (n);
 }

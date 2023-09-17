@@ -1,38 +1,41 @@
 #include "main.h"
+
 /**
 *print_int - prints integrs
 *@num: num
 *Return: number
 */
 
-int print_int(int num)
+int print_in(int num)
 {
-int i = 0, j, number = 0;
-int num_array[10];
+char num_array[12];
+int i = 0, numbers;
+int negative_num = 0;
 
-if (num == 0)
-{
-_putchar('0');
-return 1;
-}
 if (num < 0)
 {
-_putchar('-');
+negative_num = 1;
 num = -num;
-number++;
 }
 
-while (num > 0)
+do
 {
-num_array[i] = num % 10;
+num_array[i++] = '0' + (num % 10);
 num /= 10;
-i++;
+}
+while (num);
+
+if (negative_num)
+{
+num_array[i++] = '-';
+}
+numbers = 0;
+
+while (i > 0)
+{
+putchar(num_array[--i]);
+numbers++;
+}
+return (numbers);
 }
 
-for (j = i - 1; j >= 0; j--)
-{
-_putchar('0' + num_array[j]);
-number++;
-}
-return (number);
-}

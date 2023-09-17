@@ -28,6 +28,7 @@ int _printf(const char *format, ...)
 					}
 				case '%':{
 				count += _putchar('%');
+				i++;
 				break;
 					 }
 				default:{

@@ -7,13 +7,17 @@
  * Return: the number of characters printed
  */
 
-void print_int(int num)
+int print_int(int num)
 {
+int count = 0;
+
 if (num < 10)
 {
 putchar(num + '0');
-return;
+return count;
 }
 print_int(num / 10);
 putchar((num % 10) + '0');
+count++;
+return (count);
 }

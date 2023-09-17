@@ -10,8 +10,6 @@ int print_string(char *str)
 
 	if (str == NULL)
 		str = "(null)";
-	if (str == "%%")
-		str = "%";
 
 	while (str[n] != '\0')
 	{

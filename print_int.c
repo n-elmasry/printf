@@ -1,5 +1,4 @@
 #include "main.h"
-
 /**
 *print_int - prints integrs
 *@num: num
@@ -8,33 +7,32 @@
 
 int print_int(int num)
 {
-char num_array[12];
-int i = 0, numbers;
-int negative_num = 0;
+int i = 0, j, number = 0;
+int num_array[10];
 
+if (num == 0)
+{
+_putchar('0');
+return 1;
+}
 if (num < 0)
 {
-negative_num = 1;
+_putchar('-');
 num = -num;
+number++;
 }
 
-do
+while (num > 0)
 {
-num_array[i++] = '0' + (num % 10);
+num_array[i] = num % 10;
 num /= 10;
+i++;
 }
-while (num);
 
-if (negative_num)
+for (j = i - 1; j >= 0; j--)
 {
-num_array[i++] = '-';
+_putchar('0' + num_array[j]);
+number++;
 }
-numbers = 0;
-
-while (i > 0)
-{
-_putchar(num_array[--i]);
-numbers++;
-}
-return (numbers);
+return (number);
 }

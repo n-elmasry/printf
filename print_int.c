@@ -3,40 +3,25 @@
 /**
 *print_int - prints integrs
 *@num: num
-*Return: number
+*Return: i
 */
 
 int print_int(int num)
 {
-char num_array[20];
-int i = 0, numbers;
-int negative_num = 0;
+int i = 0;
 
 if (num < 0)
 {
-negative_num = 1;
+_putchar('-');
 num = -num;
+i++;
 }
 
-do {
-num_array[i++] = '0' + (num % 10);
-num /= 10;
-}
+if (num / 10)
+i += print_int(num / 10);
 
-while (num);
+_putchar(num % 10 + '0');
+i++;
 
-if (negative_num)
-{
-num_array[i++] = '-';
+return (i);
 }
-num_array = '\0';
-numbers = 0;
-
-while (i > 0)
-{
-putchar(num_array[--i]);
-numbers++;
-}
-return (numbers);
-}
-

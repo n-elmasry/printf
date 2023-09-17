@@ -28,6 +28,12 @@ int _printf(const char *format, ...)
 				i++;
 				break;
 					}
+				case 'd':{
+				case 'i':
+				count += print_int(va_arg(args, int));
+				i++;
+				break;
+					}
 				case '%':{
 				count += _putchar('%');
 				i++;

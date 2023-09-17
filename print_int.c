@@ -1,5 +1,5 @@
 #include <unistd.h>
-
+#include "main.h"
 /**
  * print_int - prints integers
  * @n: the integer to be printed

@@ -25,11 +25,6 @@ int _printf(const char *format, ...)
 				case 's':
 					count += print_string(va_arg(args, char*));
 					break;
-				case 'd':
-				case 'i':
-					num = va_arg(args, int);
-					count += print_int(num);
-					break;
 				default:
 					_putchar(format[i]);
 					count += 2;

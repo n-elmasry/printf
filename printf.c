@@ -39,6 +39,16 @@ int _printf(const char *format, ...)
 				i++;
 				break;
 					 }
+				case 'x':{
+				count += print_hexa(va_arg(args, unsigned int));
+				i++;
+				break;
+					 }
+				case 'X':{
+				count += print_hexa_X(va_arg(args, unsigned int));
+				i++;
+				break;
+					 }
 				case '%':{
 				count += _putchar('%');
 				i++;

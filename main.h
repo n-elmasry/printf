@@ -13,4 +13,6 @@ int _putchar(char c);
 int print_string(char *str);
 int print_int(int num);
 int print_binary(unsigned int n);
+int print_hexa_X(unsigned int num);
+int print_hexa(unsigned int num);
 #endif

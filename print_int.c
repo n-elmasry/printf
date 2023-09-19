@@ -30,7 +30,6 @@ num = -num;
 
 if (num / 10)
 i += print_int(num / 10);
-
 _putchar(num % 10 + '0');
 i++;
 

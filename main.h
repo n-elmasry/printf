@@ -16,5 +16,5 @@ int print_binary(unsigned int n);
 int print_hexa_X(unsigned int num);
 int print_hexa(unsigned int num);
 int print_oct(unsigned int num);
-int print_unsigned_int(unsigned int num);
+int print_unsigned_int(int num);
 #endif

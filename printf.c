@@ -49,6 +49,16 @@ int _printf(const char *format, ...)
 				i++;
 				break;
 					 }
+				case 'u':{
+				count += print_unsigned_int(va_arg(args, unsigned int));
+				i++;
+				break;
+					}
+				case 'o':{
+				count += print_oct(va_arg(args, unsigned int));
+				i++;
+				break;
+					 }
 				case '%':{
 				count += _putchar('%');
 				i++;

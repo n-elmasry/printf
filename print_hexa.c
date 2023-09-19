@@ -23,7 +23,11 @@ int print_hexa(unsigned int num)
 	}
 	return (i);
 }
-
+/**
+ * print_hexa_X - a function prints hexadecimal
+ * @num: inputed number
+ * Return: -1 for success and i for success
+*/
 int print_hexa_X(unsigned int num)
 {
 	int i = 0;

@@ -55,7 +55,7 @@ int _printf(const char *format, ...)
 				break;
 					}
 				case 'o':{
-				count += print_oct(va_arg(args, int));
+				count += print_oct(va_arg(args, unsigned int));
 				i++;
 				break;
 					 }
